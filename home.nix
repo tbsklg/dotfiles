@@ -1,53 +1,24 @@
 { pkgs, config, ... }:
 
 {
-  home.username = "parallels";
-  home.homeDirectory = "/home/parallels";
+  home.username = "tbsklg";
+  home.homeDirectory = "/Users/tbsklg";
   home.stateVersion = "24.05";
 
-  home.packages = with pkgs; [
-    awscli2
-    cargo
-    fzf
-    ghc
-    keepassxc
-    luarocks
-    lua
-    mesa-demos
-    nextcloud-client
-    nodejs
-    mob
-    python3
-    ripgrep
-    stack
-    tldr
-    tmux
-  ];
   
   home.file = {
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/config/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/config/nvim";
     };
     ".tmux.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/.tmux.conf";
+      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.tmux.conf";
     };
     ".wezterm.lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/.wezterm.lua";
+      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.wezterm.lua";
     };
-  };
-
-  xdg.desktopEntries.${"org.wezfurlong.wezterm"} = {
-    name = "WezTerm";
-    comment = "Wez's Terminal Emulator";
-    icon = "org.wezfurlong.wezterm";
-    exec = "nixGLMesa wezterm start --cwd .";
-    type = "Application";
-    categories = ["System" "TerminalEmulator" "Utility"];
-    terminal = false;
   };
 
   programs.home-manager.enable = true;
-  programs.firefox.enable = true;
   programs.git = {
     enable = true;
     userName = "Tobias Klug";
