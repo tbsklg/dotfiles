@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-  home.username = "parallels";
-  home.homeDirectory = "/home/parallels";
+  home.username = "<USERNAME>";
+  home.homeDirectory = "/home/<USERNAME>";
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
@@ -26,13 +26,13 @@
   
   home.file = {
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/config/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/config/nvim";
     };
     ".tmux.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/.tmux.conf";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/.tmux.conf";
     };
     ".wezterm.lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/parallels/dotfiles/.wezterm.lua";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/.wezterm.lua";
     };
   };
 
