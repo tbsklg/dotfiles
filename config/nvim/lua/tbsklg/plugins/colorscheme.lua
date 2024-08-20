@@ -14,8 +14,12 @@ return {
                     italic = false,
                 },
             })
-
-            vim.cmd([[colorscheme rose-pine]])
         end,
     },
+    {
+        "rebelot/kanagawa.nvim",
+        config = function()
+            vim.cmd([[colorscheme kanagawa]])
+        end,
+    }
 }

@@ -4,7 +4,10 @@
   home.username = "tbsklg";
   home.homeDirectory = "/Users/tbsklg";
   home.stateVersion = "24.05";
-
+  
+  home.packages = with pkgs; [
+    opam
+  ];
   
   home.file = {
     ".config/nvim" = {
