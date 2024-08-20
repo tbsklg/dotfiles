@@ -6,7 +6,18 @@
   home.stateVersion = "24.05";
   
   home.packages = with pkgs; [
+    cargo
+    fd
+    go
+    nodejs
     opam
+    luarocks
+    lua
+    nodePackages.prettier
+    nodePackages.eslint
+    nodePackages.eslint_d
+    ripgrep
+    wget
   ];
   
   home.file = {
@@ -18,6 +29,9 @@
     };
     ".wezterm.lua" = {
       source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.wezterm.lua";
+    };
+    ".zshrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.zshrc";
     };
   };
 
