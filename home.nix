@@ -6,6 +6,7 @@
   home.stateVersion = "24.05";
   
   home.packages = with pkgs; [
+    awscli
     cargo
     fd
     go
@@ -17,6 +18,7 @@
     nodePackages.eslint
     nodePackages.eslint_d
     ripgrep
+    tldr
     wget
   ];
   
