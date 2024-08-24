@@ -26,8 +26,26 @@ nix-env -i -E '(_: with import <nixgl> { enable32bits = false; }; nixGLMesa)'
 ```
 
 # Usage
-To use these dotfiles, clone this repository and run the following command:
+Clone this repository to the home directory. Replace <USERNAME> with your username and <GIT-EMAIL> with your preferred git email.
+Install oh-my-zsh:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Apply home-manager config:
+
 ```bash
 home-manager switch -f home.nix
 ```
 
+# Brew installs
+Some packages are installed using brew. To install brew, run the following command:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Packages installed using brew:
+```bash
+brew install --cask wezterm
+brew install fzf
+```
