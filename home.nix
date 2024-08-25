@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-  home.username = "tbsklg";
-  home.homeDirectory = "/Users/tbsklg";
+  home.username = "<USERNAME>";
+  home.homeDirectory = "/home/<USERNAME>";
   home.stateVersion = "24.05";
   
   home.packages = with pkgs; [
@@ -25,16 +25,14 @@
   
   home.file = {
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/config/nvim";
+    ".zshrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/config/nvim";
     };
     ".tmux.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.tmux.conf";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/.tmux.conf";
     };
     ".wezterm.lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.wezterm.lua";
-    };
-    ".zshrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/Users/tbsklg/dotfiles/.zshrc";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/.wezterm.lua";
     };
   };
 
