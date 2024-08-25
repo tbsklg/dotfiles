@@ -4,28 +4,28 @@
   home.username = "<USERNAME>";
   home.homeDirectory = "/home/<USERNAME>";
   home.stateVersion = "24.05";
-
+  
   home.packages = with pkgs; [
-    awscli2
+    awscli
     cargo
-    fzf
-    ghc
-    keepassxc
+    fd
+    go
+    nodejs
+    opam
     luarocks
     lua
-    mesa-demos
-    nextcloud-client
-    nodejs
-    mob
-    python3
+    nodePackages.prettier
+    nodePackages.eslint
+    nodePackages.eslint_d
     ripgrep
-    stack
     tldr
     tmux
+    wget
   ];
   
   home.file = {
     ".config/nvim" = {
+    ".zshrc" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/<USERNAME>/dotfiles/config/nvim";
     };
     ".tmux.conf" = {
@@ -36,18 +36,7 @@
     };
   };
 
-  xdg.desktopEntries.${"org.wezfurlong.wezterm"} = {
-    name = "WezTerm";
-    comment = "Wez's Terminal Emulator";
-    icon = "org.wezfurlong.wezterm";
-    exec = "nixGLMesa wezterm start --cwd .";
-    type = "Application";
-    categories = ["System" "TerminalEmulator" "Utility"];
-    terminal = false;
-  };
-
   programs.home-manager.enable = true;
-  programs.firefox.enable = true;
   programs.git = {
     enable = true;
     userName = "Tobias Klug";
