@@ -19,6 +19,7 @@
     nodePackages.eslint_d
     ripgrep
     tldr
+    tmux
     wget
   ];
   
