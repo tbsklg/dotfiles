@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-  home.username = "<USERNAME>";
-  home.homeDirectory = "/users/<USERNAME>";
+  home.username = "tbsklg";
+  home.homeDirectory = "/users/tbsklg";
   home.stateVersion = "24.05";
   
   home.packages = with pkgs; [
@@ -26,13 +26,13 @@
   
   home.file = {
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/users/<USERNAME>/dotfiles/config/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/config/nvim";
     };
     ".tmux.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/users/<USERNAME>/dotfiles/.tmux.conf";
+      source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/.tmux.conf";
     };
     ".wezterm.lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/users/<USERNAME>/dotfiles/.wezterm.lua";
+      source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/.wezterm.lua";
     };
   };
 
@@ -40,7 +40,7 @@
   programs.git = {
     enable = true;
     userName = "Tobias Klug";
-    userEmail = "<GIT-EMAIL>";
+    userEmail = "tbs.klg@gmail.com";
   };
   programs.neovim.enable = true;
   programs.wezterm.enable = true;
