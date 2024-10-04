@@ -19,4 +19,5 @@ return {
     {
         "rebelot/kanagawa.nvim",
     },
+    "gmr458/cold.nvim",
 }

@@ -2,36 +2,41 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
-config.color_scheme = 'Kanagawa Dragon (Gogh)'
+--config.color_scheme = 'Nord (base20)'
 config.colors = {
-  background = '#14161b',
-  cursor_bg = '#e0e2ea',
-  cursor_border = '#e0e2ea',
-  cursor_fg = '#14161b',
-  foreground = '#e0e2ea',
-  selection_bg = '#2c2e33',
-  selection_fg = '#14161b',
+  foreground = '#d8d8d8',
+  background = '#0e0e0e',
+
+  cursor_bg = '#d8d8d8',
+  cursor_border = '#d8d8d8',
+  cursor_fg = '#0e0e0e',
+
+  selection_bg = '#383838',
+  selection_fg = '#d8d8d8',
+
   ansi = {
-    '#2c2e33',
-    '#a30202',
-    '#b3f6c0',
-    '#6b5300',
-    '#81a9c6',
-    '#9d81bb',
-    '#128184',
-    '#4f5258',
+    '#161616',
+    '#ab4642',
+    '#76946A',
+    '#f7ca88',
+    '#799496',
+    '#a8aec1',
+    '#86c1b9',
+    '#d8d8d8',
   },
   brights = {
-    '#2c2e33',
-    '#ffc0b9',
-    '#b3f6c0',
-    '#fce094',
-    '#8cf8f7',
-    '#7f639b',
-    '#007373',
-    '#c4c6cd',
-  }
+    '#585858',
+    '#4C8C8C',
+    '#76946A',
+    '#f7ca88',
+    '#739393',
+    '#9ca0b0',
+    '#86c1b9',
+    '#f9f9f9',
+  },
 }
+
+config.force_reverse_video_cursor = true
 
 config.font = wezterm.font_with_fallback {
   'JetBrains Mono',
