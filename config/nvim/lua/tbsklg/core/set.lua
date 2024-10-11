@@ -31,4 +31,4 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.cursorline = true
 
-vim.cmd 'colorscheme cold'
+vim.cmd 'colorscheme kanagawa'
