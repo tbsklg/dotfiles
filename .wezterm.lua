@@ -23,11 +23,6 @@ config.colors = {
   indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
 }
 
-config.force_reverse_video_cursor = true
-
-config.window_background_opacity = 1.0
-config.macos_window_background_blur = 10
-
 config.font = wezterm.font_with_fallback {
   'JetBrains Mono',
   'Nerd Fonts Symbols',
