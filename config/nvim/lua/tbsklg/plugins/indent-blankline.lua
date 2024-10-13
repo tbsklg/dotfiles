@@ -15,6 +15,7 @@ return {
                 "notify",
                 "toggleterm",
                 "lazyterm",
+                "lox",
             },
         },
     },
