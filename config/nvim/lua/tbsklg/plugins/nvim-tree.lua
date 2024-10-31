@@ -37,8 +37,11 @@ return {
                 },
             },
             git = {
-                ignore = false,
+                ignore = true,
             },
+            filters = {
+                custom = { 'node_modules' },
+            }
         })
     end,
 }
