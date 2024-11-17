@@ -16,7 +16,7 @@ return {
                 relativenumber = false,
                 adaptive_size = false,
                 preserve_window_proportions = true,
-                side = "right"
+                side = "left"
             },
             renderer = {
                 indent_markers = {
@@ -40,7 +40,7 @@ return {
                 ignore = true,
             },
             filters = {
-                custom = { 'node_modules' },
+                custom = { '**/node_modules' },
             }
         })
     end,
