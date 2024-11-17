@@ -26,7 +26,9 @@ return {
             require("kanagawa").setup({
                 keywordStyle = { italic = false},
                 transparent = true,
-                theme = "wave"
+                background = {
+                    dark = "wave",
+                },
             });
             vim.cmd("colorscheme kanagawa")
         end

@@ -69,48 +69,13 @@ config.keys = {
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
+config.color_scheme = 'Kanagawa (Gogh)'
 config.enable_tab_bar = false
-config.colors = {
-	indexed = {
-		[16] = "#ffa066",
-		[17] = "#ff5d62",
-	},
-	foreground = "#dcd7ba",
-	background = "#1f1f23",
-	cursor_bg = "#dcd7ba",
-	cursor_border = "#dcd7ba",
-	cursor_fg = "#1f1f23",
-	selection_bg = "#2d4f67",
-	selection_fg = "#c8c093",
-
-	ansi = {
-		"#090618", -- black
-		"#c34043", -- red
-		"#76946a", -- green
-		"#c0a36e", -- yellow
-		"#7e9cd8", -- blue
-		"#957fb8", -- magenta
-		"#6a9589", -- cyan
-		"#c8c093", -- white
-	},
-
-	brights = {
-		"#727169", -- black
-		"#e82424", -- red
-		"#98bb6c", -- green
-		"#e6c384", -- yellow
-		"#7fb4ca", -- blue
-		"#938aa9", -- magenta
-		"#7aa89f", -- cyan
-		"#dcd7ba", -- white
-	},
-}
 config.window_background_opacity = 0.9
 
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
 	"Nerd Fonts Symbols",
-})
-config.font_size = 15
+}) config.font_size = 15
 
 return config
