@@ -9,6 +9,7 @@ return {
                     italic = false,
                 },
             })
+            --vim.cmd("colorscheme rose-pine")
         end
     },
     {
@@ -18,5 +19,16 @@ return {
                 telescope = false
             })
         end
+    },
+    {
+        "rebelot/kanagawa.nvim",
+        config = function()
+            require("kanagawa").setup({
+                transparent = true,
+                theme = "wave"
+            });
+            vim.cmd("colorscheme kanagawa")
+        end
     }
 }
+

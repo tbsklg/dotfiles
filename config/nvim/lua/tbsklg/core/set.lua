@@ -30,5 +30,3 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.cursorline = true
-
-vim.cmd("colorscheme base16-gruvbox-dark-hard")
