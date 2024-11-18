@@ -69,13 +69,14 @@ config.keys = {
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
-config.color_scheme = 'Kanagawa (Gogh)'
+config.color_scheme = "Gruvbox dark, hard (base16)"
 config.enable_tab_bar = false
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
 	"Nerd Fonts Symbols",
-}) config.font_size = 15
+})
+config.font_size = 15
 
 return config

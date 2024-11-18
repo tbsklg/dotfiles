@@ -18,20 +18,20 @@ return {
             require('base16-colorscheme').with_config({
                 telescope = false
             })
+            vim.cmd("colorscheme base16-gruvbox-dark-hard")
         end
     },
     {
         "rebelot/kanagawa.nvim",
         config = function()
             require("kanagawa").setup({
-                keywordStyle = { italic = false},
+                keywordStyle = { italic = false },
                 transparent = true,
                 background = {
                     dark = "wave",
                 },
             });
-            vim.cmd("colorscheme kanagawa")
+            --vim.cmd("colorscheme kanagawa")
         end
     }
 }
-

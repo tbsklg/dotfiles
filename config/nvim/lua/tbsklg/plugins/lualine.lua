@@ -1,3 +1,7 @@
+local function hello()
+  return [[hello world]]
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -10,6 +14,9 @@ return {
                 disabled_filetypes = { 'NvimTree' },
             },
             sections = {
+                lualine_a = {
+                    { hello }
+                },
                 lualine_b = {
                     "diff"
                 },
@@ -20,7 +27,6 @@ return {
                         color = { fg = "#ff9e64" },
                     },
                     { "encoding" },
-                    { "fileformat" },
                     { "filetype" },
                 },
             },
