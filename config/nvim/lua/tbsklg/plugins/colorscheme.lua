@@ -16,7 +16,8 @@ return {
         "RRethy/base16-nvim",
         config = function()
             require('base16-colorscheme').with_config({
-                telescope = false
+                telescope = false,
+                transparent = true,
             })
             vim.cmd("colorscheme base16-gruvbox-dark-hard")
         end

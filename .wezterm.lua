@@ -66,7 +66,7 @@ config.keys = {
 		mods = "SHIFT|CTRL",
 		action = wezterm.action.ToggleFullScreen,
 	},
-	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+	{ key = "D", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
 config.color_scheme = "Gruvbox dark, hard (base16)"

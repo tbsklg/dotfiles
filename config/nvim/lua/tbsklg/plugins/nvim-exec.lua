@@ -10,6 +10,6 @@ return {
 
         vim.keymap.set({ "n", "v" }, "<leader>r", function()
             nvim_exec.run()
-        end, { desc = "Execute code block after marker >>>" })
+        end, { desc = "Execute code block in comment" })
     end,
 }
