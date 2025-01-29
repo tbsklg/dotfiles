@@ -30,3 +30,4 @@ vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.cursorline = true
+vim.diagnostic.config({ virtual_text = false })
