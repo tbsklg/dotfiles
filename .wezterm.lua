@@ -28,7 +28,7 @@ config.keys = {
 			flags = "FUZZY|WORKSPACES",
 		}),
 	},
-	{ key = 'l', mods = 'ALT', action = wezterm.action.ShowLauncher },
+	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
 	{
 		key = "t",
 		mods = "SHIFT|ALT",

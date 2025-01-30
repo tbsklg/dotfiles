@@ -16,4 +16,9 @@ return {
     "tpope/vim-sleuth",
 
     "folke/zen-mode.nvim",
+
+    {
+        "hashivim/vim-terraform",
+        ft = { "terraform" },
+    },
 }
