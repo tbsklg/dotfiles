@@ -17,7 +17,7 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme base16-gruvbox-dark-hard]])
+            vim.cmd([[colorscheme gruvbox-dark-hard]])
             vim.o.background = "dark"
             local bools = vim.api.nvim_get_hl(0, { name = "Boolean" })
             vim.api.nvim_set_hl(0, "Comment", bools)
