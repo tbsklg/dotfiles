@@ -15,7 +15,7 @@ return {
             },
             sections = {
                 lualine_a = {
-                    { hello }
+                    { "mode" }
                 },
                 lualine_b = {
                     "diff"
