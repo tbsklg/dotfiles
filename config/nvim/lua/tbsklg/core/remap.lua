@@ -34,6 +34,13 @@ vim.keymap.set(
     { desc = "Make it rain" }
 )
 
+vim.keymap.set(
+    "n",
+    "<leader>gol",
+    "<cmd>CellularAutomaton game_of_life<CR>",
+    { desc = "Make it rain" }
+)
+
 -- window management
 vim.keymap.set(
     "n",

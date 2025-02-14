@@ -1,6 +1,7 @@
 return {
     {
         "mrcjkb/rustaceanvim",
-        config = function(_, _) end,
+        version = "^5",
+        lazy = false, -- This plugin is already lazy
     },
 }
