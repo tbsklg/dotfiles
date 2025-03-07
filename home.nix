@@ -34,6 +34,9 @@
     ".wezterm.lua" = {
       source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/.wezterm.lua";
     };
+    ".config/sketchybar" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/sketchybar";
+    };
   };
 
   programs.home-manager.enable = true;
