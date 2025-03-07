@@ -7,10 +7,8 @@
   
   home.packages = with pkgs; [
     awscli
-    cargo
     fd
     fzf
-    go
     nodejs
     opam
     luarocks
@@ -19,8 +17,9 @@
     nodePackages.eslint
     nodePackages.eslint_d
     ripgrep
+    rustup
+    sketchybar
     tldr
-    tmux
     wget
   ];
   
@@ -28,14 +27,23 @@
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/config/nvim";
     };
-    ".tmux.conf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/.tmux.conf";
-    };
     ".wezterm.lua" = {
       source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/.wezterm.lua";
     };
     ".config/sketchybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "/users/tbsklg/dotfiles/sketchybar";
+    };
+  };
+
+  launchd.agents.sketchybar = {
+    enable = true;
+    config = {
+      Label = "sketchybar";
+      ProgramArguments = [
+        "${pkgs.sketchybar}/bin/sketchybar"
+      ];
+      RunAtLoad = true;
+      KeepAlive = true;
     };
   };
 
