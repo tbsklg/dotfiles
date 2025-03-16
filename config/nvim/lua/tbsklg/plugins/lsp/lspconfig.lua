@@ -4,7 +4,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim",                   opts = {} },
+        { "folke/neodev.nvim", opts = {} },
     },
     config = function()
         local lspconfig = require("lspconfig")
@@ -89,7 +89,7 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         local signs =
-        { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+            { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -130,9 +130,35 @@ return {
             on_attach = on_attach,
         })
 
-        lspconfig["angularls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
+        local function setup_angular_ls()
+            local function get_npm_prefix()
+                local handle = io.popen("npm config get prefix")
+                local result = handle:read("*a")
+                handle:close()
+                return vim.fn.trim(result)
+            end
+
+            local npm_prefix = get_npm_prefix()
+            local project_library_path = npm_prefix
+                .. "/lib/node_modules/@angular/language-server"
+            local ngserver_path = npm_prefix .. "/bin/ngserver"
+
+            lspconfig["angularls"].setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                on_new_config = function(new_config, new_root_dir)
+                    new_config.cmd = {
+                        ngserver_path,
+                        "--stdio",
+                        "--tsProbeLocations",
+                        new_root_dir .. "/node_modules",
+                        "--ngProbeLocations",
+                        project_library_path,
+                    }
+                end,
+            })
+        end
+
+        setup_angular_ls()
     end,
 }
