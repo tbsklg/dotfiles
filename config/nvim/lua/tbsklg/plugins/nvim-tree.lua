@@ -37,7 +37,7 @@ return {
                 },
             },
             git = {
-                ignore = true,
+                ignore = false,
             },
             filters = {
                 custom = { '**/node_modules' },

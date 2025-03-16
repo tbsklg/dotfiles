@@ -1,0 +1,7 @@
+# Include the hosts directory structure
+!hosts/
+!hosts/example.nix
+
+# Ignore actual machine configs
+hosts/*.nix
+!hosts/example.nix

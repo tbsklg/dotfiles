@@ -26,16 +26,16 @@ nix-env -i -E '(_: with import <nixgl> { enable32bits = false; }; nixGLMesa)'
 ```
 
 # Usage
-Clone this repository to the home directory. Replace <USERNAME> with your username and <GIT-EMAIL> with your preferred git email.
+Clone this repository to the home directory.
 Install oh-my-zsh:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Apply home-manager config:
+Create a host config file in the hosts directory (see hosts/example.nix) and run:
 
 ```bash
-home-manager switch -f home.nix
+HOSTNAME=example home-manager switch -f home.nix
 ```
 
 # Brew installs
