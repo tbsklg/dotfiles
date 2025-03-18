@@ -39,18 +39,6 @@ in
       };
     };
   
-    launchd.agents.sketchybar = {
-      enable = true;
-      config = {
-        Label = "sketchybar";
-        ProgramArguments = [
-          "${pkgs.sketchybar}/bin/sketchybar"
-        ];
-        RunAtLoad = true;
-        KeepAlive = true;
-      };
-    };
-  
     programs.home-manager.enable = true;
     programs.git = {
       enable = true;
