@@ -13,6 +13,7 @@ in
       awscli
       fd
       fzf
+      htop
       nodejs
       opam
       luarocks
@@ -37,6 +38,7 @@ in
       ".config/sketchybar" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/sketchybar";
       };
+      ".zshrc".source = ./zshrc;
     };
   
     programs.home-manager.enable = true;
