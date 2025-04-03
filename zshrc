@@ -41,3 +41,5 @@ fi
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/tbsklg/.opam/opam-init/init.zsh' ]] || source '/Users/tbsklg/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+eval "$(zoxide init zsh)"

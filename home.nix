@@ -54,4 +54,5 @@ in
     programs.neovim.enable = true;
     programs.wezterm.enable = true;
     programs.direnv.enable = true;
+    programs.zoxide.enable = true;
   }
