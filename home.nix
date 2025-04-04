@@ -14,6 +14,7 @@ in
       fd
       fzf
       htop
+      jq
       nodejs
       opam
       luarocks
@@ -23,9 +24,12 @@ in
       nodePackages.eslint_d
       ripgrep
       rustup
+      scc
       sketchybar
       tldr
+      thefuck
       wget
+      zoxide
     ];
     
     home.file = {
