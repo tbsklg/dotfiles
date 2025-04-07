@@ -4,8 +4,10 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/bin/roc:$PATH
 export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
-export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
+
+export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 
 plugins=(
  git
