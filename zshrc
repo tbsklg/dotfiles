@@ -45,3 +45,4 @@ fi
 # END opam configuration
 
 eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
