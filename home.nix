@@ -27,7 +27,6 @@ in
       scc
       sketchybar
       tldr
-      thefuck
       wget
       zoxide
     ];
