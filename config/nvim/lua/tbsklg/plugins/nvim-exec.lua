@@ -6,7 +6,9 @@ return {
         "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-        local nvim_exec = require("nvim-exec").setup({})
+        local nvim_exec = require("nvim-exec").setup({
+            output_mode = "comment",
+        })
 
         vim.keymap.set({ "n", "v" }, "<leader>rc", function()
             nvim_exec.run()

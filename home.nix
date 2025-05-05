@@ -15,7 +15,8 @@ in
       fzf
       htop
       jq
-      nodejs_latest
+      nodejs
+      neofetch
       opam
       luarocks
       lua
