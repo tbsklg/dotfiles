@@ -18,7 +18,7 @@ plugins=(
 )
 
 # Aliases
-alias nv="nvim"
+alias v="nvim"
 
 source $ZSH/oh-my-zsh.sh
 
