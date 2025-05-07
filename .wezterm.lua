@@ -72,12 +72,14 @@ config.keys = {
 
 config.color_scheme = "Gruvbox dark, hard (base16)"
 config.enable_tab_bar = false
-config.window_background_opacity = 1
+config.window_background_opacity = 1.0
 
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
 	"Nerd Fonts Symbols",
 })
-config.font_size = 15
+config.font_size = 16
+config.macos_window_background_blur = 30
+config.adjust_window_size_when_changing_font_size = false
 
 return config

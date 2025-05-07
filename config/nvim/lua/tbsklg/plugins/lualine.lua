@@ -1,7 +1,3 @@
-local function hello()
-  return [[hello world]]
-end
-
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -19,6 +15,9 @@ return {
                 },
                 lualine_b = {
                     "diff"
+                },
+                lualine_c = {
+                    'diagnostics'
                 },
                 lualine_x = {
                     {
