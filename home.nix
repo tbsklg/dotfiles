@@ -27,9 +27,11 @@ in
       rustup
       scc
       sketchybar
+      skhd
       tldr
       thefuck
       wget
+      yabai
       zoxide
     ];
     
@@ -44,6 +46,7 @@ in
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/sketchybar";
       };
       ".zshrc".source = ./zshrc;
+      ".config/skhd/skhdrc".source = ./skhdrc;
     };
   
     programs.home-manager.enable = true;

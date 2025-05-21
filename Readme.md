@@ -2,7 +2,7 @@
 This repository contains my dotfiles. It uses nix and home-manager to manage these.
 
 # Requirements
-Install nix package manager
+Install Nix
 ```bash
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
@@ -48,4 +48,32 @@ Packages installed using brew:
 ```bash
 brew install --cask wezterm
 brew install fzf
+```
+
+# Home Manager
+## Updates
+1. Update the channel
+```bash
+nix-channel --update
+```
+
+2. Switch to the updated Home Manager environment 
+```bash
+HOSTNAME=example home-manager switch -f home.nix
+```
+
+## Rollbacks
+1. Get a list of all home-manager generations:
+```bash
+home-manager generations
+```
+
+2. Copy Nix store path of the choosen generation:
+```bash
+/nix/store/mv960kl9chn2lal5q8lnqdp1ygxngcd1-home-manager-generation
+```
+
+3. Run the activate script inside the copied store path:
+```bash
+/nix/store/mv960kl9chn2lal5q8lnqdp1ygxngcd1-home-manager-generation/activate
 ```
