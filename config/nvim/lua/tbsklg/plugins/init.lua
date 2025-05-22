@@ -1,6 +1,8 @@
 return {
     "nvim-lua/plenary.nvim",
 
+    "christoomey/vim-tmux-navigator",
+
     -- gcc to comment lines
     "numToStr/Comment.nvim",
 
