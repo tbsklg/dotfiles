@@ -19,7 +19,7 @@ return {
         local mason_lspconfig = require("mason-lspconfig")
         mason_lspconfig.setup({
             ensure_installed = {
-                --"angularls",
+                "angularls",
                 "ts_ls",
                 "html",
                 "cssls",
