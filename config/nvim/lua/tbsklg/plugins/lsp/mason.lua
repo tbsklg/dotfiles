@@ -26,6 +26,12 @@ return {
                 "lua_ls",
                 "pyright",
             },
+            automatic_enable = {
+                exclude = {
+                    "ts_ls",
+                    "angular_ls",
+                }
+            },
 
             automatic_installation = true,
         })

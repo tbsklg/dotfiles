@@ -99,11 +99,6 @@ return {
             virtual_text = true,
         })
 
-        lspconfig["html"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         lspconfig["ts_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -114,21 +109,7 @@ return {
             },
         })
 
-        lspconfig["cssls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
-        lspconfig["pyright"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         require("neodev").setup({})
-        lspconfig["lua_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
 
         local function setup_angular_ls()
             local function get_npm_prefix()
