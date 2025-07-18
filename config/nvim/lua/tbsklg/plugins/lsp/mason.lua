@@ -29,7 +29,7 @@ return {
             automatic_enable = {
                 exclude = {
                     "ts_ls",
-                    "angular_ls",
+                    "angularls",
                 }
             },
 
