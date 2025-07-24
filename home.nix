@@ -10,7 +10,7 @@ in
     home.stateVersion = "24.05";
     
     home.packages = with pkgs; [
-      awscli
+      awscli2
       fd
       fzf
       htop
@@ -26,7 +26,6 @@ in
       ripgrep
       rustup
       scc
-      sketchybar
       skhd
       tldr
       thefuck
