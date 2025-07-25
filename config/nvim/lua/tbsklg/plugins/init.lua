@@ -21,4 +21,6 @@ return {
         "hashivim/vim-terraform",
         ft = { "terraform" },
     },
+
+    "github/copilot.vim",
 }
