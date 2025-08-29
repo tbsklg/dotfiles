@@ -16,7 +16,7 @@ in
       fzf
       htop
       jq
-      nodejs
+      nodejs_24
       neofetch
       opam
       luarocks
