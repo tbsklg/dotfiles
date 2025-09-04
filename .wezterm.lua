@@ -70,7 +70,7 @@ config.keys = {
 	{ key = "D", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
-config.color_scheme = "Gruvbox dark, hard (base16)"
+config.color_scheme = "Rosé Pine (base16)"
 config.enable_tab_bar = false
 config.window_background_opacity = 1.0
 
