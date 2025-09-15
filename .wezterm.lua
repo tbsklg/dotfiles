@@ -71,7 +71,8 @@ config.keys = {
 }
 
 config.color_scheme = "Rosé Pine (base16)"
-config.enable_tab_bar = false
+config.enable_tab_bar = true
+config.window_decorations = "RESIZE"
 config.window_background_opacity = 1.0
 
 config.font = wezterm.font_with_fallback({
