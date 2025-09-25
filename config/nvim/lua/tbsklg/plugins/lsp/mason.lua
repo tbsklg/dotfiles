@@ -30,7 +30,7 @@ return {
                 exclude = {
                     "ts_ls",
                     "angularls",
-                }
+                },
             },
 
             automatic_installation = true,

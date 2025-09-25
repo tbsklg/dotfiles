@@ -9,7 +9,7 @@ return {
                     italic = false,
                 },
             })
-            vim.cmd("colorscheme rose-pine")
+            --vim.cmd("colorscheme rose-pine")
         end,
     },
     {
@@ -37,11 +37,8 @@ return {
             require("kanagawa").setup({
                 keywordStyle = { italic = false },
                 transparent = true,
-                background = {
-                    dark = "wave",
-                },
             })
-            --vim.cmd("colorscheme kanagawa")
+            vim.cmd("colorscheme kanagawa")
         end,
     },
 }
