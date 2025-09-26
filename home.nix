@@ -29,7 +29,6 @@ in
       scc
       skhd
       tldr
-      thefuck
       wget
       yabai
       zoxide

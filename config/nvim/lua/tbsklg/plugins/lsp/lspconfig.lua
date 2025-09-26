@@ -7,7 +7,6 @@ return {
         { "folke/neodev.nvim", opts = {} },
     },
     config = function()
-        local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         local keymap = vim.keymap
@@ -106,7 +105,7 @@ return {
             virtual_text = true,
         })
 
-        lspconfig["ts_ls"].setup({
+        vim.lsp.config("ts_ls", {
             capabilities = capabilities,
             on_attach = on_attach,
             init_options = {
@@ -131,7 +130,7 @@ return {
                 .. "/lib/node_modules/@angular/language-server"
             local ngserver_path = npm_prefix .. "/bin/ngserver"
 
-            lspconfig["angularls"].setup({
+            vim.lsp.config("angularls", {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 on_new_config = function(new_config, new_root_dir)
