@@ -4,7 +4,6 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim", opts = {} },
     },
     config = function()
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -115,7 +114,7 @@ return {
             },
         })
 
-        require("neodev").setup({})
+        vim.lsp.enable('ts_ls')
 
         local function setup_angular_ls()
             local function get_npm_prefix()
