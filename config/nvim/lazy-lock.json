@@ -14,7 +14,7 @@
   "harpoon": { "branch": "master", "commit": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3" },
   "haskell-tools.nvim": { "branch": "master", "commit": "5fa6671ff4face61be6a439b085c4977c20a60dc" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
-  "kanagawa.nvim": { "branch": "master", "commit": "27f1e119f3a7e6d11d435a59e3262e6affda1f83" },
+  "kanagawa.nvim": { "branch": "master", "commit": "aef7f5cec0a40dbe7f3304214850c472e2264b10" },
   "lazy.nvim": { "branch": "main", "commit": "1ea3c4085785f460fb0e46d2fe1ee895f5f9e7c1" },
   "lazydev.nvim": { "branch": "main", "commit": "e28ce52fc7ff79fcb76f0e79ee6fb6182fca90b9" },
   "lspkind.nvim": { "branch": "master", "commit": "3ddd1b4edefa425fda5a9f95a4f25578727c0bb3" },
