@@ -70,11 +70,11 @@ config.keys = {
 	{ key = "D", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
-config.color_scheme = 'Kanagawa (Gogh)'
+config.color_scheme = "Kanagawa (Gogh)"
 config.enable_tab_bar = true
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.9
 
-config.font = wezterm.font_with_fallback({"JetBrains Mono", "The font with those symbols"})
+config.font = wezterm.font_with_fallback({ "JetBrains Mono", "The font with those symbols" })
 
 config.font_size = 15
 config.macos_window_background_blur = 30
