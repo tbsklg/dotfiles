@@ -41,9 +41,6 @@ in
       ".wezterm.lua" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.wezterm.lua";
       };
-      ".config/sketchybar" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/sketchybar";
-      };
       ".zshrc".source = ./zshrc;
       ".config/skhd/skhdrc".source = ./skhdrc;
     };
