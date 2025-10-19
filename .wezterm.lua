@@ -72,7 +72,8 @@ config.keys = {
 
 config.color_scheme = "Kanagawa (Gogh)"
 config.enable_tab_bar = true
-config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW"
+config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | RESIZE"
+config.native_macos_fullscreen_mode = true
 
 config.font = wezterm.font_with_fallback({ "JetBrains Mono", "The font with those symbols" })
 
