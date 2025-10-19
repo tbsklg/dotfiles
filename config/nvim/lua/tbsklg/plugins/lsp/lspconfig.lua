@@ -101,7 +101,16 @@ return {
         })
 
         vim.diagnostic.config({
-            virtual_text = true,
+            virtual_text = false,
+            signs = true,
+            update_in_insert = true,
+            underline = true,
+            severity_sort = false,
+            float = {
+                border = "rounded",
+                header = "",
+                prefix = "",
+            },
         })
 
         vim.lsp.config("ts_ls", {
@@ -114,7 +123,7 @@ return {
             },
         })
 
-        vim.lsp.enable('ts_ls')
+        vim.lsp.enable("ts_ls")
 
         local function setup_angular_ls()
             local function get_npm_prefix()
