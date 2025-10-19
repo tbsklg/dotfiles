@@ -1,7 +1,7 @@
 export LANG=en_US.UTF-8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/bin/roc:$PATH
+export PATH=$HOME/.local/bin/roc_nightly-macos_apple_silicon-2025-09-09-d73ea109cc2:$PATH
 export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"

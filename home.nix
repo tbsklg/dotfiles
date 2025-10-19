@@ -11,6 +11,7 @@ in
     
     home.packages = with pkgs; [
       awscli2
+      cargo-lambda
       docker
       fd
       fzf
@@ -32,6 +33,7 @@ in
       wget
       yabai
       zoxide
+      zig_0_13
     ];
     
     home.file = {
