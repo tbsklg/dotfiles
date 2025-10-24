@@ -50,11 +50,14 @@ in
     programs.home-manager.enable = true;
     programs.git = {
       enable = true;
-      userName = hostConfig.git_username;
-      userEmail = hostConfig.git_useremail;
+      settings = {
+        user = {
+          name = hostConfig.git_username;
+          email = hostConfig.git_useremail;
+        };
+      };
     };
     programs.neovim.enable = true;
-    programs.wezterm.enable = true;
     programs.direnv.enable = true;
     programs.zoxide.enable = true;
   }
