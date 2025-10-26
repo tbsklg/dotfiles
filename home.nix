@@ -33,7 +33,6 @@ in
       wget
       yabai
       zoxide
-      zig_0_13
     ];
     
     home.file = {

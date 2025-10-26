@@ -7,10 +7,18 @@ return {
                 keywordStyle = { italic = true },
                 transparent = false,
             })
-            vim.cmd("colorscheme kanagawa")
+            --vim.cmd("colorscheme kanagawa")
         end,
         build = function()
-            vim.cmd("KanagawaCompile")
+            --vim.cmd("KanagawaCompile")
+        end,
+    },
+    {
+        "webhooked/kanso.nvim",
+        config = function()
+            vim.cmd("colorscheme kanso")
+        end,
+        build = function()
         end,
     },
 }
