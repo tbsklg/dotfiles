@@ -19,6 +19,7 @@ return {
             vim.cmd("colorscheme kanso")
         end,
         build = function()
+            vim.cmd("KansoCompile")
         end,
     },
 }

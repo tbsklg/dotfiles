@@ -70,7 +70,6 @@ config.keys = {
 	{ key = "D", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
-config.force_reverse_video_cursor = true
 config.colors = {
 	foreground = "#C5C9C7",
 	background = "#14171d",
