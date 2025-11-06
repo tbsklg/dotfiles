@@ -17,8 +17,5 @@ return {
 
     "folke/zen-mode.nvim",
 
-    {
-        "hashivim/vim-terraform",
-        ft = { "terraform" },
-    },
+    "nvim-java/nvim-java",
 }

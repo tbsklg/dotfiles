@@ -114,7 +114,13 @@ return {
             },
         })
 
-        vim.lsp.enable('ts_ls')
+        vim.lsp.enable("ts_ls")
+
+        vim.lsp.config("jdtls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+        vim.lsp.enable("jdtls")
 
         local function setup_angular_ls()
             local function get_npm_prefix()
