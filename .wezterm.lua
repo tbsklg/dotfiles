@@ -70,24 +70,63 @@ config.keys = {
 	{ key = "D", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
-config.force_reverse_video_cursor = true
+config.force_reverse_video_cursor = false
 config.colors = {
-	foreground = "#dcd7ba",
-	background = "#1f1f28",
+	foreground = "#c5c5c5",
+	background = "#18191a",
+	cursor_bg = "#c5c5c5",
+	cursor_fg = "#18191a",
+	cursor_border = "#c5c5c5",
+	selection_fg = "#c5c5c5",
+	selection_bg = "#3c4048",
 
-	cursor_bg = "#c8c093",
-	cursor_fg = "#c8c093",
-	cursor_border = "#c8c093",
+	scrollbar_thumb = "#3c4048",
 
-	selection_fg = "#c8c093",
-	selection_bg = "#2d4f67",
+	tab_bar = {
+		background = "#18191a",
+		active_tab = {
+			bg_color = "#3c4048",
+			fg_color = "#c5c5c5",
+		},
+		inactive_tab = {
+			bg_color = "#18191a",
+			fg_color = "#878787",
+		},
+		inactive_tab_hover = {
+			bg_color = "#2a2b2c",
+			fg_color = "#c5c5c5",
+		},
+		new_tab = {
+			bg_color = "#18191a",
+			fg_color = "#878787",
+		},
+		new_tab_hover = {
+			bg_color = "#2a2b2c",
+			fg_color = "#c5c5c5",
+		},
+	},
 
-	scrollbar_thumb = "#16161d",
-	split = "#16161d",
+	ansi = {
+		"#18191a", -- black
+		"#d2788c", -- red (muted pink-red)
+		"#a6cc70", -- green (muted sage green)
+		"#e6b99d", -- yellow (muted peach)
+		"#7c9fc9", -- blue (muted blue)
+		"#b4a5d6", -- magenta (muted lavender)
+		"#87c5a3", -- cyan (muted teal)
+		"#c5c5c5", -- white
+	},
 
-	ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-	brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-	indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+	brights = {
+		"#3c4048", -- bright black (dark gray)
+		"#e8a5b5", -- bright red
+		"#b8d17a", -- bright green
+		"#f0c9a6", -- bright yellow
+		"#8fb1d3", -- bright blue
+		"#c4b5e0", -- bright magenta
+		"#9dd1b0", -- bright cyan
+		"#e0e0e0", -- bright white
+	},
 }
 
 config.enable_tab_bar = true

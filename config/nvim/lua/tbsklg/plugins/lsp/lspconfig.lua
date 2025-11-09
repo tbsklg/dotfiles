@@ -115,7 +115,7 @@ return {
         })
 
         vim.lsp.enable("ts_ls")
-
+        
         vim.lsp.config("jdtls", {
             capabilities = capabilities,
             on_attach = on_attach,
