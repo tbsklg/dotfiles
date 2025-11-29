@@ -113,9 +113,19 @@ return {
                 },
             },
         })
-
         vim.lsp.enable("ts_ls")
-        
+
+        vim.lsp.config("zls", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                zls = {
+                    enable_build_on_save = true,
+                },
+            },
+        })
+        vim.lsp.enable("zls")
+
         vim.lsp.config("jdtls", {
             capabilities = capabilities,
             on_attach = on_attach,
