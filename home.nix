@@ -13,6 +13,7 @@ in
       awscli2
       cargo-lambda
       docker
+      dig
       fd
       fzf
       htop
@@ -49,7 +50,7 @@ in
     programs.home-manager.enable = true;
     programs.git = {
       enable = true;
-      settings = {
+      extraConfig = {
         user = {
           name = hostConfig.git_username;
           email = hostConfig.git_useremail;
