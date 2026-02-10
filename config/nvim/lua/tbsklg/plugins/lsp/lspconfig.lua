@@ -29,7 +29,7 @@ return {
             keymap.set(
                 "n",
                 "gd",
-                "<cmd>Telescope lsp_definitions<CR>",
+                "<cmd>tab split | lua vim.lsp.buf.definition()<CR>",
                 { desc = "Show definitions" }
             )
 
