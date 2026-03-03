@@ -46,3 +46,7 @@ fi
 
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
+
+# Force block cursor on every prompt
+zle-line-init() { echo -ne '\e[1 q' }
+zle -N zle-line-init
