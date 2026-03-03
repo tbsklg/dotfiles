@@ -45,6 +45,9 @@ in
       };
       ".zshrc".source = ./zshrc;
       ".config/skhd/skhdrc".source = ./skhdrc;
+      ".config/ghostty/config" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.ghostty.config";
+      };
     };
   
     programs.home-manager.enable = true;

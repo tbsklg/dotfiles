@@ -5,6 +5,7 @@ export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
 export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
 
 export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 
