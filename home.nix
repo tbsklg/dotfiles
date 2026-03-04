@@ -48,6 +48,8 @@ in
       ".config/ghostty/config" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.ghostty.config";
       };
+    } // pkgs.lib.optionalAttrs (hostConfig.opencode or false) {
+      # Requires `opencode = true;` in the host config (e.g. hosts/private.nix)
       ".config/opencode/opencode.json" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/opencode/opencode.json";
       };
