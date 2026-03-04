@@ -48,6 +48,12 @@ in
       ".config/ghostty/config" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.ghostty.config";
       };
+      ".config/opencode/opencode.json" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/opencode/opencode.json";
+      };
+      ".config/opencode/tui.json" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/opencode/tui.json";
+      };
     };
   
     programs.home-manager.enable = true;
