@@ -44,6 +44,7 @@ return {
                     "query",
                     "rust",
                     "toml",
+                    "zig",
                 },
                 incremental_selection = {
                     enable = true,

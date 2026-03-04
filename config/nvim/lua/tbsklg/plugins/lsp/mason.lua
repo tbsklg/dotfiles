@@ -25,6 +25,7 @@ return {
                 "cssls",
                 "lua_ls",
                 "pyright",
+                "zls",
             },
             automatic_enable = {
                 exclude = {

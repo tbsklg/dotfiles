@@ -16,6 +16,7 @@ return {
                 typescript = { "prettier" },
                 html = { "prettier" },
                 lua = { "stylua" },
+                zig = { "zigfmt" },
             },
             format_on_save,
         })
