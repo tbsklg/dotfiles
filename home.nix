@@ -61,7 +61,7 @@ in
     programs.home-manager.enable = true;
     programs.git = {
       enable = true;
-      extraConfig = {
+      settings = {
         user = {
           name = hostConfig.git_username;
           email = hostConfig.git_useremail;
