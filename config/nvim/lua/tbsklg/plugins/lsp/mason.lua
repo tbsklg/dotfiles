@@ -34,8 +34,6 @@ return {
                     "angularls",
                 },
             },
-
-            automatic_installation = true,
         })
 
         local mason_tool_installer = require("mason-tool-installer")
