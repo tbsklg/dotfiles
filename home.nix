@@ -11,7 +11,7 @@ in
     
     home.packages = with pkgs; [
       awscli2
-      cargo-lambda
+      colima
       docker
       dig
       fd
@@ -20,7 +20,6 @@ in
       jq
       nodejs_24
       neofetch
-      opam
       luarocks
       lua
       nodePackages.prettier

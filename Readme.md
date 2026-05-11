@@ -38,18 +38,6 @@ Create a host config file in the hosts directory (see hosts/example.nix) and run
 HOSTNAME=example home-manager switch -f home.nix
 ```
 
-# Brew installs
-Some packages are installed using brew. To install brew, run the following command:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Packages installed using brew:
-```bash
-brew install --cask wezterm
-brew install fzf
-```
-
 # Home Manager
 ## Updates
 1. Update the channel
