@@ -12,7 +12,8 @@ in
     home.packages = with pkgs; [
       awscli2
       colima
-      docker
+      docker-client
+      docker-compose
       dig
       fd
       fzf
