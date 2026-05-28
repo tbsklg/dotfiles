@@ -36,6 +36,7 @@ return {
                     "markdown_inline",
                     "svelte",
                     "graphql",
+                    "gleam",
                     "bash",
                     "lua",
                     "vim",
