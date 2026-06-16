@@ -75,5 +75,6 @@ return {
             },
         })
         vim.lsp.enable("zls")
+        vim.lsp.enable('gleam')
     end,
 }
