@@ -5,3 +5,4 @@
 # Ignore actual machine configs
 hosts/*.nix
 !hosts/example.nix
+!hosts/work.nix

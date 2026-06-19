@@ -11,11 +11,12 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-linux";
+      system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations.parallels = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.work = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { hostConfig = import ./hosts/work.nix; };
 
         modules = [
           ./home.nix

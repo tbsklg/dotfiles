@@ -1,3 +1,3 @@
 # Neovim Configuration
-This is my neovim configuration. It is a work in progress and will be updated as I learn more about neovim.
 
+Plugin management with [lazy.nvim](https://github.com/folke/lazy.nvim). LSP, Treesitter, Telescope, Harpoon, and custom keymaps under `lua/tbsklg/`.

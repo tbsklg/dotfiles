@@ -1,9 +1,4 @@
-{ pkgs, config, ... }:
-
-let
-  hostname = builtins.getEnv "HOSTNAME";
-  hostConfig = import ./hosts/${hostname}.nix;
-in
+{ pkgs, config, hostConfig, ... }:
   {
     home.username = hostConfig.username;
     home.homeDirectory = hostConfig.homeDirectory;
@@ -20,12 +15,13 @@ in
       htop
       jq
       nodejs_24
-      neofetch
+      fastfetch
+      neovim
       luarocks
       lua
-      nodePackages.prettier
-      nodePackages.eslint
-      nodePackages.eslint_d
+      prettier
+      eslint
+      eslint_d
       ripgrep
       rustup
       scc
@@ -68,7 +64,7 @@ in
         };
       };
     };
-    programs.neovim.enable = true;
+    programs.neovim.enable = false;
     programs.direnv.enable = true;
     programs.zoxide.enable = true;
   }
