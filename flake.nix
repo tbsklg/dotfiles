@@ -22,5 +22,13 @@
           ./home.nix
         ];
       };
+      homeConfigurations.private = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { hostConfig = import ./hosts/private.nix; };
+
+        modules = [
+          ./home.nix
+        ];
+      };
     };
 }
