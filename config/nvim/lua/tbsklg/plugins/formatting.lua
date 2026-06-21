@@ -18,7 +18,7 @@ return {
                 lua = { "stylua" },
                 zig = { "zigfmt" },
             },
-            format_on_save,
+            format_on_save = format_on_save,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>mp", function()

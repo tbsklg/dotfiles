@@ -1,6 +1,6 @@
 {
   username = "tbsklg";
-  homeDirectory = "/users/tbsklg";
+  homeDirectory = "/Users/tbsklg";
 
   git_username = "Tobias Klug";
   git_useremail = "tbs.klg@gmail.com";

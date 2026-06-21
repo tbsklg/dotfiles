@@ -25,19 +25,15 @@
       ripgrep
       rustup
       scc
-      skhd
       tldr
       wget
-      yabai
       zoxide
+      zig
     ];
     
     home.file = {
       ".config/nvim" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
-      };
-      ".wezterm.lua" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.wezterm.lua";
       };
       ".zshrc".source = ./zshrc;
       ".config/skhd/skhdrc".source = ./skhdrc;

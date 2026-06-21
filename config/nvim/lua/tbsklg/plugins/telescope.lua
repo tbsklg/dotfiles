@@ -12,7 +12,7 @@ return {
 
         telescope.setup({
             defaults = {
-                path_display = { "truncate " },
+                path_display = { "truncate" },
                 mappings = {
                     i = {
                         ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -26,26 +26,6 @@ return {
 
         telescope.load_extension("hoogle")
         telescope.load_extension("fzf")
-
-        local keymap = vim.keymap
-
-        keymap.set(
-            "n",
-            "<leader>ff",
-            "<cmd>Telescope find_files<cr>",
-            { desc = "Fuzzy find files" }
-        )
-        keymap.set(
-            "n",
-            "<leader>fs",
-            "<cmd>Telescope live_grep<cr>",
-            { desc = "Find string in cwd" }
-        )
-        keymap.set(
-            "n",
-            "<leader>fc",
-            "<cmd>Telescope grep_string<cr>",
-            { desc = "Find string under cursor in cwd" }
-        )
+        -- Telescope keymaps live in tbsklg/core/remap.lua
     end,
 }

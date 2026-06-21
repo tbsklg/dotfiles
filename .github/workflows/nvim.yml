@@ -1,0 +1,33 @@
+name: nvim
+
+on:
+  push:
+    paths:
+      - "config/nvim/**"
+      - ".github/workflows/nvim.yml"
+  pull_request:
+    paths:
+      - "config/nvim/**"
+      - ".github/workflows/nvim.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: config/nvim
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      # Fresh runner has no plugins; install them (and run build steps) first.
+      - name: Sync plugins
+        run: nvim --headless "+Lazy! sync" +qa
+
+      - name: Test config loads
+        run: make test

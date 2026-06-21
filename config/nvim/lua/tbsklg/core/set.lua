@@ -30,8 +30,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus"
-vim.api.nvim_create_autocmd('Filetype', { pattern = 'rust', command = 'set colorcolumn=100' })
+vim.api.nvim_create_autocmd(
+    "Filetype",
+    { pattern = "rust", command = "set colorcolumn=100" }
+)
 
 vim.opt.cursorline = true
-vim.diagnostic.config({ virtual_text = false })
-vim.opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
+vim.opt.listchars = "tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•"

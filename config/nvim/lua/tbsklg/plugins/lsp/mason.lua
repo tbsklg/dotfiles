@@ -32,6 +32,8 @@ return {
                     "rust_analyzer",
                     "ts_ls",
                     "angularls",
+                    -- jdtls is managed by nvim-java (see plugins/java.lua)
+                    "jdtls",
                 },
             },
         })

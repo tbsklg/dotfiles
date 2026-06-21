@@ -16,6 +16,4 @@ return {
     "tpope/vim-sleuth",
 
     "folke/zen-mode.nvim",
-
-    "nvim-java/nvim-java",
 }
