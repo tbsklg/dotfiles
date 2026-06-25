@@ -29,6 +29,10 @@
       wget
       zoxide
       zig
+      go
+      gopls
+      goimports-reviser
+      golangci-lint
     ];
     
     home.file = {

@@ -80,5 +80,17 @@ return {
         })
         vim.lsp.enable("zls")
         vim.lsp.enable('gleam')
+
+        vim.lsp.config("gopls", {
+            settings = {
+                gopls = {
+                    analyses = {
+                        unusedparams = true,
+                    },
+                    staticcheck = true,
+                },
+            },
+        })
+        vim.lsp.enable("gopls")
     end,
 }

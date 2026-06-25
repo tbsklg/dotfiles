@@ -17,6 +17,7 @@ return {
                 html = { "prettier" },
                 lua = { "stylua" },
                 zig = { "zigfmt" },
+                go = { "goimports", "gofmt" },
             },
             format_on_save = format_on_save,
         })

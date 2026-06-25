@@ -26,6 +26,7 @@ return {
                 "lua_ls",
                 "pyright",
                 "zls",
+                "gopls",
             },
             automatic_enable = {
                 exclude = {
@@ -45,6 +46,8 @@ return {
                 "stylua",
                 "eslint",
                 "eslint_d",
+                "goimports",
+                "golangci-lint",
             },
         })
     end,
