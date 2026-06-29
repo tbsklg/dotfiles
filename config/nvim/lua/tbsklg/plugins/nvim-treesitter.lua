@@ -1,70 +1,55 @@
+local parsers = {
+    "json",
+    "javascript",
+    "typescript",
+    "tsx",
+    "yaml",
+    "html",
+    "css",
+    "prisma",
+    "markdown",
+    "markdown_inline",
+    "graphql",
+    "gleam",
+    "bash",
+    "lua",
+    "vim",
+    "dockerfile",
+    "gitignore",
+    "query",
+    "rust",
+    "toml",
+    "zig",
+    "go",
+    "gomod",
+    "gosum",
+    "gowork",
+}
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPre", "BufNewFile" },
+        branch = "main",
+        lazy = false,
         build = ":TSUpdate",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter-textobjects",
-            "nvim-treesitter/playground",
             "windwp/nvim-ts-autotag",
         },
         config = function()
-            -- import nvim-treesitter plugin
-            local treesitter = require("nvim-treesitter.configs")
+            require("nvim-treesitter").setup()
+            require("nvim-treesitter").install(parsers):wait(300000)
 
-            -- configure treesitter
-            treesitter.setup({ -- enable syntax highlighting
-                highlight = {
-                    enable = true,
-                },
-                indent = { enable = true },
-                -- enable autotagging (w/ nvim-ts-autotag plugin)
-                autotag = {
-                    enable = true,
-                },
-                -- ensure these language parsers are installed
-                ensure_installed = {
-                    "json",
-                    "javascript",
-                    "typescript",
-                    "tsx",
-                    "yaml",
-                    "html",
-                    "css",
-                    "prisma",
-                    "markdown",
-                    "markdown_inline",
-                    "svelte",
-                    "graphql",
-                    "gleam",
-                    "bash",
-                    "lua",
-                    "vim",
-                    "dockerfile",
-                    "gitignore",
-                    "query",
-                    "rust",
-                    "toml",
-                    "zig",
-                    "go",
-                    "gomod",
-                    "gosum",
-                    "gowork",
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<C-space>",
-                        node_incremental = "<C-space>",
-                        scope_incremental = false,
-                        node_decremental = "<bs>",
-                    },
-                },
-                -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-                context_commentstring = {
-                    enable = true,
-                    enable_autocmd = false,
-                },
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    pcall(vim.treesitter.start)
+                end,
+            })
+
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    vim.bo.indentexpr =
+                        "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
             })
         end,
     },

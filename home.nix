@@ -17,6 +17,7 @@
       nodejs_24
       fastfetch
       neovim
+      tree-sitter
       luarocks
       lua
       prettier
