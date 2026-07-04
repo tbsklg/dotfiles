@@ -1,25 +1,28 @@
 return {
     {
-        "rebelot/kanagawa.nvim",
-        config = function()
-            require("kanagawa").setup({
-                compile = true,
-                keywordStyle = { italic = true },
-                transparent = false,
-            })
-            -- vim.cmd("colorscheme kanagawa")
-        end,
-        build = function()
-            vim.cmd("KanagawaCompile")
-        end,
-    },
-    {
-        "vague-theme/vague.nvim",
-        lazy = false,
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
         config = function()
-            require("vague").setup({})
-            vim.cmd("colorscheme vague")
+            require("catppuccin").setup({
+                flavour = "mocha",
+                integrations = {
+                    telescope = true,
+                    gitsigns = true,
+                    nvimtree = true,
+                    treesitter = true,
+                    cmp = true,
+                    harpoon = true,
+                    trouble = true,
+                    mason = true,
+                    dressing = true,
+                    which_key = true,
+                    indent_blankline = { enabled = true },
+                    native_lsp = { enabled = true },
+                    mini = { enabled = true },
+                },
+            })
+            vim.cmd("colorscheme catppuccin")
         end,
     },
 }
