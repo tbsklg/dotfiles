@@ -19,7 +19,7 @@ return {
                 zig = { "zigfmt" },
                 go = { "goimports", "gofmt" },
             },
-            format_on_save = format_on_save,
+            format_on_save = false,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>mp", function()
