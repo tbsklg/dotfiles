@@ -47,6 +47,10 @@
       ".config/ghostty/config" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.ghostty.config";
       };
+    } // pkgs.lib.optionalAttrs (hostConfig.kopia or false) {
+      ".kopiaignore" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/kopiaignore";
+      };
     } // pkgs.lib.optionalAttrs (hostConfig.opencode or false) {
       # Requires `opencode = true;` in the host config (e.g. hosts/private.nix)
       ".config/opencode/opencode.json" = {

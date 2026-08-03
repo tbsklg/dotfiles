@@ -1,0 +1,35 @@
+/.bun
+/.cabal
+/.cargo
+/.colima
+/.gem
+/.ghcup
+/.local
+/.npm
+/.npm-global
+/.npm-packages
+/.opam
+/.rustup
+/.stack
+/.u2net
+/.yarn
+/go
+/.Trash
+/tmp
+/Applications (Parallels)
+/Library/Parallels
+/Library/Containers
+/Library/Python
+/Library/Caches
+/Library/CloudStorage
+/Nextcloud
+/Music/Music
+/Pictures/Photos Library.photoslibrary
+/Library/Application Support/BraveSoftware
+/Library/Application Support/Firefox
+/Library/Application Support/Google
+/Library/Application Support/MobileSync
+/Library/Application Support/Spotify
+/Library/Application Support/Steam
+/Library/Application Support/com.apple.wallpaper
+/Library/Application Support/discord
