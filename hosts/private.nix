@@ -6,4 +6,5 @@
   git_useremail = "tbs.klg@gmail.com";
 
   opencode = true;
+  kopia = true;
 }

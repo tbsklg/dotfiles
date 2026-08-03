@@ -6,4 +6,5 @@
   git_useremail = "tobias.klug@codecentric.de";
 
   opencode = false;
+  kopia = false;
 }

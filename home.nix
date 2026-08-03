@@ -34,6 +34,8 @@
       gopls
       goimports-reviser
       golangci-lint
+    ] ++ pkgs.lib.optionals (hostConfig.kopia or false) [
+      kopia
     ];
     
     home.file = {
