@@ -6,6 +6,7 @@ local parsers = {
     "yaml",
     "html",
     "css",
+    "java",
     "prisma",
     "markdown",
     "markdown_inline",
