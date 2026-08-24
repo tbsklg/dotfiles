@@ -7,6 +7,7 @@ local parsers = {
     "html",
     "css",
     "java",
+    "kotlin",
     "prisma",
     "markdown",
     "markdown_inline",

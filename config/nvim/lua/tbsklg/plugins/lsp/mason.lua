@@ -27,6 +27,7 @@ return {
                 "pyright",
                 "zls",
                 "gopls",
+                "kotlin_language_server",
             },
             automatic_enable = {
                 exclude = {
