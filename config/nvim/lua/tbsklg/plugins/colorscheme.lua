@@ -8,6 +8,9 @@ return {
             vim.o.background = "dark"
             vim.cmd("colorscheme gruvbox-dark-hard")
 
+            vim.api.nvim_set_hl(0, "Normal", { fg = 0xebdbb2, bg = 0x1d2021 })
+            vim.api.nvim_set_hl(0, "Cursor", { fg = 0x1d2021, bg = 0xebdbb2 })
+
             local fg = vim.api.nvim_get_hl(0, { name = "Normal" }).fg
             local dim = vim.api.nvim_get_hl(0, { name = "@variable.member" }).fg
 
