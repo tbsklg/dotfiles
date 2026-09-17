@@ -23,6 +23,7 @@
       prettier
       eslint
       eslint_d
+      picocom
       ripgrep
       rustup
       scc
