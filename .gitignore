@@ -7,3 +7,5 @@ hosts/*.nix
 !hosts/example.nix
 !hosts/work.nix
 !hosts/private.nix
+
+.DS_STORE
