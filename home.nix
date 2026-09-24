@@ -12,6 +12,7 @@
       dig
       fd
       fzf
+      glab
       htop
       jq
       nodejs_24
