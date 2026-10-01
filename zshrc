@@ -25,6 +25,7 @@ prompt_newline=''
 
 # Aliases
 alias v="nvim"
+alias sso-login="$HOME/.aws/bin/sso-login"
 
 # Tools
 eval "$(zoxide init zsh)"
