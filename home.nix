@@ -31,7 +31,7 @@
       tldr
       wget
       zoxide
-      zig
+      zig_0_17
       go
       gopls
       goimports-reviser
