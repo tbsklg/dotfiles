@@ -102,6 +102,7 @@
       shellAliases = {
         v = "nvim";
         sso-login = "$HOME/.aws/bin/sso-login";
+        rebuild = "sudo darwin-rebuild switch --flake ~/dotfiles#${hostConfig.host}";
       };
       profileExtra = ''
         [ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"

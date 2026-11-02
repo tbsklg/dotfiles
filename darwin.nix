@@ -9,6 +9,8 @@
   system.primaryUser = hostConfig.username;
   users.users.${hostConfig.username}.home = hostConfig.homeDirectory;
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   fonts.packages = [ pkgs.nerd-fonts.hack pkgs.jetbrains-mono ];
 
   nix-homebrew = {
