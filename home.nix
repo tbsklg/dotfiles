@@ -129,6 +129,106 @@
     programs.direnv.enable = true;
     programs.zoxide.enable = true;
 
+    programs.firefox = {
+      enable = true;
+      package = null;
+      profiles.default-release = {
+        isDefault = true;
+        search = {
+          default = "ddg";
+          force = true;
+        };
+        settings = {
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
+          "sidebar.main.tools" = "{3c078156-979c-498b-8990-85f7987dd929},bookmarks,passwords";
+          "browser.toolbars.bookmarks.visibility" = "never";
+          "browser.tabs.inTitlebar" = 1;
+          "browser.theme.toolbar-theme" = 0;
+          "browser.uiCustomization.state" = builtins.toJSON {
+            placements = {
+              widget-overflow-fixed-list = [ "fxa-toolbar-menu-button" ];
+              unified-extensions-area = [
+                "firefoxcolor_mozilla_com-browser-action"
+                "_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action"
+                "_20a9bb38-ed7c-4faf-9aaf-7c5d241fd747_-browser-action"
+                "tranquility_ushnisha_com-browser-action"
+                "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action"
+                "addon_darkreader_org-browser-action"
+                "ublock0_raymondhill_net-browser-action"
+                "_a9c2ad37-e940-4892-8dce-cd73c6cbbc0c_-browser-action"
+              ];
+              nav-bar = [
+                "back-button"
+                "forward-button"
+                "stop-reload-button"
+                "urlbar-container"
+                "panic-button"
+                "smartwindow-group-tabs-button"
+                "unified-extensions-button"
+                "downloads-button"
+                "vertical-spacer"
+                "_testpilot-containers-browser-action"
+              ];
+              TabsToolbar = [ ];
+              vertical-tabs = [ "tabbrowser-tabs" ];
+              PersonalToolbar = [ "personal-bookmarks" ];
+            };
+            seen = [
+              "save-to-pocket-button"
+              "developer-button"
+              "firefoxcolor_mozilla_com-browser-action"
+              "ublock0_raymondhill_net-browser-action"
+              "_3c078156-979c-498b-8990-85f7987dd929_-browser-action"
+              "_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action"
+              "_20a9bb38-ed7c-4faf-9aaf-7c5d241fd747_-browser-action"
+              "addon_darkreader_org-browser-action"
+              "screenshot-button"
+              "_a9c2ad37-e940-4892-8dce-cd73c6cbbc0c_-browser-action"
+              "reset-pbm-toolbar-button"
+              "ipprotection-button"
+              "ai-window-toggle"
+              "tranquility_ushnisha_com-browser-action"
+              "smartwindow-group-tabs-button"
+              "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action"
+              "_testpilot-containers-browser-action"
+            ];
+            dirtyAreaCache = [
+              "nav-bar"
+              "PersonalToolbar"
+              "TabsToolbar"
+              "unified-extensions-area"
+              "vertical-tabs"
+              "widget-overflow-fixed-list"
+            ];
+            currentVersion = 28;
+            newElementCount = 8;
+          };
+
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+          "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
+          "browser.newtabpage.activity-stream.widgets.clocks.enabled" = false;
+          "browser.newtabpage.activity-stream.widgets.lists.enabled" = false;
+          "browser.newtabpage.activity-stream.widgets.weather.enabled" = false;
+          "browser.newtabpage.activity-stream.newtabWallpapers.wallpaper" = "firefox-d-dark";
+
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.globalprivacycontrol.enabled" = true;
+          "network.dns.disablePrefetch" = true;
+          "network.prefetch-next" = false;
+          "network.http.speculative-parallel-limit" = 0;
+          "signon.rememberSignons" = false;
+
+          "font.name.serif.x-western" = "Hack Nerd Font";
+          "font.size.variable.x-western" = 14;
+          "browser.zoom.full" = false;
+          "accessibility.typeaheadfind.flashBar" = 0;
+          "browser.bookmarks.showMobileBookmarks" = false;
+        };
+      };
+    };
+
     launchd.agents.dotfiles-update-check = {
       enable = true;
       config = {
