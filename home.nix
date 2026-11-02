@@ -131,6 +131,15 @@
           email = hostConfig.git_useremail;
         };
       };
+      includes = [
+        {
+          condition = "gitdir:~/dotfiles/";
+          contents.user = {
+            name = "tbsklg";
+            email = "tbs.klg@gmail.com";
+          };
+        }
+      ];
     };
     programs.neovim.enable = false;
     programs.direnv.enable = true;
