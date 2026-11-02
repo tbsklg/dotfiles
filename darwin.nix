@@ -1,5 +1,7 @@
 { pkgs, hostConfig, ... }:
 {
+  imports = [ ./macos.nix ];
+
   nixpkgs.hostPlatform = "aarch64-darwin";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -7,7 +9,7 @@
   system.primaryUser = hostConfig.username;
   users.users.${hostConfig.username}.home = hostConfig.homeDirectory;
 
-  fonts.packages = [ pkgs.nerd-fonts.hack ];
+  fonts.packages = [ pkgs.nerd-fonts.hack pkgs.jetbrains-mono ];
 
   nix-homebrew = {
     enable = true;
@@ -29,9 +31,30 @@
       "tbsklg/tap/zoidc"
     ];
     casks = [
+      "1password"
+      "babeledit"
+      "burp-suite"
+      "firefox"
       "ghostty"
       "google-chrome"
+      "google-drive"
+      "kicad"
+      "logitech-g-hub"
+      "lulu"
+      "microsoft-teams"
+      "miro"
+      "mullvad-vpn"
       "quarto"
+      "rnote"
+      "rode-connect"
+      "snapmaker-luban"
+      "stats"
+      "utm"
+      "zoom"
     ];
+    masApps = {
+      Keynote = 409183694;
+      Numbers = 409203825;
+    };
   };
 }
