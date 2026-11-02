@@ -52,9 +52,5 @@
       "utm"
       "zoom"
     ];
-    masApps = {
-      Keynote = 409183694;
-      Numbers = 409203825;
-    };
   };
 }
