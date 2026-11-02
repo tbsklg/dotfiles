@@ -9,3 +9,4 @@ hosts/*.nix
 !hosts/private.nix
 
 .DS_STORE
+result

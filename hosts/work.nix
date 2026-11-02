@@ -1,4 +1,6 @@
 {
+  host = "work";
+
   username = "tbsklg";
   homeDirectory = "/Users/tbsklg";
 

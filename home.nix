@@ -1,4 +1,11 @@
 { pkgs, config, hostConfig, ... }:
+  let
+    dotfiles-update = pkgs.writeShellScriptBin "dotfiles-update" ''
+      DIR="${config.home.homeDirectory}/dotfiles"
+      HOST="${hostConfig.host}"
+      ${builtins.readFile ./scripts/dotfiles-update}
+    '';
+  in
   {
     home.username = hostConfig.username;
     home.homeDirectory = hostConfig.homeDirectory;
@@ -40,6 +47,7 @@
       maven
       exercism
       mob
+      dotfiles-update
     ] ++ pkgs.lib.optionals (hostConfig.kopia or false) [
       kopia
     ];
@@ -120,4 +128,14 @@
     programs.neovim.enable = false;
     programs.direnv.enable = true;
     programs.zoxide.enable = true;
+
+    launchd.agents.dotfiles-update-check = {
+      enable = true;
+      config = {
+        ProgramArguments = [ "${dotfiles-update}/bin/dotfiles-update" "check" ];
+        StartCalendarInterval = [ { Hour = 9; Minute = 0; } ];
+        StandardOutPath = "${config.home.homeDirectory}/Library/Logs/dotfiles-update.log";
+        StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/dotfiles-update.log";
+      };
+    };
   }

@@ -1,0 +1,54 @@
+set -euo pipefail
+
+export PATH="/etc/profiles/per-user/$(id -un)/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+notify() {
+  osascript -e "display notification \"$2\" with title \"$1\""
+}
+
+nvim_updates() {
+  nvim --headless \
+    -c 'lua require("lazy").check({ wait = true, show = false })' \
+    -c 'lua local n = 0 for _, p in pairs(require("lazy.core.config").plugins) do if p._.updates then n = n + 1 end end io.write(n)' \
+    -c 'qa' 2>/dev/null || true
+}
+
+check() {
+  tmp="$(mktemp -d)"
+  trap 'rm -rf "$tmp"' EXIT
+  rsync -a --exclude .git --exclude result "$DIR/" "$tmp/src/"
+
+  nix_count=0
+  if nix flake update --flake "path:$tmp/src" &&
+    nix build "path:$tmp/src#darwinConfigurations.$HOST.system" -o "$tmp/result"; then
+    nix_count="$(nix store diff-closures /run/current-system "$tmp/result" | grep -c '→' || true)"
+  else
+    notify "dotfiles" "Nix update failed to build, see ~/Library/Logs/dotfiles-update.log"
+  fi
+
+  brew update --quiet || true
+  brew_count="$(brew outdated --quiet | wc -l | tr -d ' ')"
+
+  nvim_count="$(nvim_updates)"
+  nvim_count="${nvim_count//[^0-9]/}"
+  nvim_count="${nvim_count:-0}"
+
+  if [ $((nix_count + brew_count + nvim_count)) -gt 0 ]; then
+    notify "Updates available" "Nix: $nix_count · Brew: $brew_count · Neovim: $nvim_count – run dotfiles-update"
+  fi
+}
+
+apply() {
+  nix flake update --flake "$DIR"
+  sudo /run/current-system/sw/bin/darwin-rebuild switch --flake "$DIR#$HOST"
+  brew update
+  brew upgrade
+  nvim --headless "+Lazy! sync" +qa
+  git -C "$DIR" status --short flake.lock config/nvim/lazy-lock.json
+}
+
+case "${1:-apply}" in
+  check) check ;;
+  apply) apply ;;
+  *) echo "usage: dotfiles-update [check|apply]" >&2; exit 1 ;;
+esac
