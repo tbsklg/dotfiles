@@ -1,12 +1,19 @@
-{ pkgs, config, hostConfig, ... }:
+{ pkgs, lib, config, hostConfig, ... }:
   let
     dotfiles-update = pkgs.writeShellScriptBin "dotfiles-update" ''
       DIR="${config.home.homeDirectory}/dotfiles"
       HOST="${hostConfig.host}"
       ${builtins.readFile ./scripts/dotfiles-update}
     '';
+    wallpaper = pkgs.runCommand "wallpaper-black.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+      magick -size 64x64 xc:black $out
+    '';
   in
   {
+    home.activation.wallpaper = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      run ${pkgs.desktoppr}/bin/desktoppr ${wallpaper} || true
+    '';
+
     home.username = hostConfig.username;
     home.homeDirectory = hostConfig.homeDirectory;
     home.stateVersion = "24.05";
