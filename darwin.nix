@@ -24,11 +24,8 @@
       upgrade = false;
       cleanup = "none";
     };
-    taps = [ "tbsklg/tap" ];
     brews = [
       "mingw-w64"
-      "tbsklg/tap/zandy"
-      "tbsklg/tap/zoidc"
     ];
     casks = [
       "1password"
