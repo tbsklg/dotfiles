@@ -1,38 +1,41 @@
 # Dotfiles
 
-Nix flake + home-manager configuration for macOS (aarch64-darwin).
+nix-darwin + home-manager configuration for macOS (aarch64-darwin).
 
-## Requirements
+- `flake.nix` – one `darwinConfigurations.<host>` per machine (`private`, `work`)
+- `darwin.nix` – system: Nix settings, fonts, Homebrew (installed via nix-homebrew) and the few brews/casks not in nixpkgs
+- `home.nix` – user: CLI packages, zsh (oh-my-zsh + pure), git, dotfile symlinks
+- `hosts/*.nix` – per-host values (user, git identity, feature flags)
 
-Install Nix:
-```bash
-sh <(curl -L https://nixos.org/nix/install) --daemon
-```
-
-Enable flakes in `~/.config/nix/nix.conf` or `/etc/nix/nix.conf`:
-```
-experimental-features = nix-command flakes
-```
-
-## Usage
-
-Clone this repository and create a host config in `hosts/` (see `hosts/example.nix`).
-Then add a matching `homeConfigurations.<name>` entry in `flake.nix` that imports your host config via `extraSpecialArgs`.
+## New Mac
 
 ```bash
-home-manager switch --flake .#<name>
+xcode-select --install          # provides git
+git clone <this repo> ~/dotfiles
+cd ~/dotfiles
+./bootstrap.sh private          # or: work
 ```
+
+`bootstrap.sh` installs Nix, then nix-darwin, which installs Homebrew, all packages, casks, fonts
+and links the dotfiles. It is safe to re-run.
 
 ## Updates
 
 ```bash
 nix flake update
-home-manager switch --flake .#work
+sudo darwin-rebuild switch --flake ~/dotfiles#private
 ```
+
+Note: flakes only see files tracked by git — `git add` new files before switching.
 
 ## Rollbacks
 
 ```bash
-home-manager generations
-/nix/store/<generation-path>/activate
+sudo darwin-rebuild --list-generations
+sudo darwin-rebuild --rollback
 ```
+
+## Not managed here
+
+- `~/.aws/bin/sso-login` (aliased in zsh), SSH/GPG keys
+- ghcup, luaver, opam (sourced by zsh if present)
