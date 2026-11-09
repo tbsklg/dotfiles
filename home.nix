@@ -55,6 +55,9 @@
       exercism
       mob
       dotfiles-update
+      statix
+      deadnix
+      alejandra
     ] ++ pkgs.lib.optionals (hostConfig.kopia or false) [
       kopia
     ];
