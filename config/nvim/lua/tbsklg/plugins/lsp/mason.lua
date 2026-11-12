@@ -28,6 +28,7 @@ return {
                 "zls",
                 "gopls",
                 "kotlin_language_server",
+                "taplo",
             },
             automatic_enable = {
                 exclude = {

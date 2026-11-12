@@ -89,5 +89,6 @@ return {
         })
         vim.lsp.enable("gopls")
         vim.lsp.enable("kotlin_language_server")
+        vim.lsp.enable("taplo")
     end,
 }
