@@ -1,4 +1,4 @@
-{ pkgs, lib, config, hostConfig, ... }:
+{ pkgs, lib, config, hostConfig, firefox-addons, ... }:
   let
     dotfiles-update = pkgs.writeShellScriptBin "dotfiles-update" ''
       DIR="${config.home.homeDirectory}/dotfiles"
@@ -154,11 +154,17 @@
       package = null;
       profiles.default-release = {
         isDefault = true;
+        extensions.packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+          darkreader
+          proton-pass
+          ublock-origin
+        ];
         search = {
           default = "ddg";
           force = true;
         };
         settings = {
+          "extensions.autoDisableScopes" = 0;
           "sidebar.revamp" = true;
           "sidebar.verticalTabs" = true;
           "sidebar.main.tools" = "{3c078156-979c-498b-8990-85f7987dd929},bookmarks,passwords";

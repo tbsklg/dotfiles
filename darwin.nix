@@ -36,6 +36,7 @@
       "ghostty"
       "lulu"
       "mullvad-vpn"
+      "proton-pass"
       "rode-connect"
     ];
   };

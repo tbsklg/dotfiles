@@ -12,9 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nix-darwin, home-manager, nix-homebrew, ... }:
+  outputs = { nix-darwin, home-manager, nix-homebrew, firefox-addons, ... }:
     let
       mkDarwin = hostConfig: nix-darwin.lib.darwinSystem {
         specialArgs = { inherit hostConfig; };
@@ -27,7 +31,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "before-home-manager";
-              extraSpecialArgs = { inherit hostConfig; };
+              extraSpecialArgs = { inherit hostConfig firefox-addons; };
               users.${hostConfig.username} = import ./home.nix;
             };
           }
