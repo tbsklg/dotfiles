@@ -165,6 +165,7 @@
         };
         settings = {
           "extensions.autoDisableScopes" = 0;
+          "extensions.activeThemeID" = "default-theme@mozilla.org";
           "sidebar.revamp" = true;
           "sidebar.verticalTabs" = true;
           "sidebar.main.tools" = "{3c078156-979c-498b-8990-85f7987dd929},bookmarks,passwords";
