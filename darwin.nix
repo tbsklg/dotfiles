@@ -11,6 +11,8 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  environment.systemPackages = [ pkgs.utm ];
+
   fonts.packages = [ pkgs.nerd-fonts.hack pkgs.jetbrains-mono ];
 
   nix-homebrew = {
@@ -30,26 +32,11 @@
       "mingw-w64"
     ];
     casks = [
-      "1password"
-      "babeledit"
-      "burp-suite"
       "firefox"
       "ghostty"
-      "google-chrome"
-      "google-drive"
-      "kicad"
-      "logitech-g-hub"
       "lulu"
-      "microsoft-teams"
-      "miro"
       "mullvad-vpn"
-      "quarto"
-      "rnote"
       "rode-connect"
-      "snapmaker-luban"
-      "stats"
-      "utm"
-      "zoom"
     ];
   };
 }

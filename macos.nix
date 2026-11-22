@@ -49,17 +49,28 @@
     screencapture.target = "file";
 
     WindowManager = {
+      AppWindowGroupingBehavior = true;
       EnableTiledWindowMargins = false;
+      GloballyEnabled = false;
       HideDesktop = true;
+      StageManagerHideWidgets = true;
+      StandardHideWidgets = true;
     };
+
+    universalaccess.reduceTransparency = true;
 
     CustomUserPreferences = {
       NSGlobalDomain = {
         AppleAccentColor = -1;
         AppleAquaColorVariant = 6;
-        AppleIconAppearanceTintColor = "Graphite";
+        AppleHighlightColor = "0.500000 0.500000 0.500000 Other";
       };
       "com.apple.controlcenter".AutoHideMenuBarOption = 3;
+
+      "com.apple.Spotlight" = {
+        EnabledPreferenceRules = [ "com.apple.AppStore" "com.apple.iBooksX" ];
+        DisabledBundlesFromSiriTCC = [ "com.apple.AppStore" "com.apple.iBooksX" ];
+      };
 
       "com.apple.HIToolbox" = {
         AppleCurrentKeyboardLayoutInputSourceID = "com.apple.keylayout.ABC";
@@ -88,11 +99,6 @@
           "61" = on // { value = { parameters = [ 32 49 786432 ]; type = "standard"; }; };
           "79" = on; "80" = on; "81" = on; "82" = on;
         };
-
-      "eu.exelban.Stats" = {
-        LaunchAtLoginNext = true;
-        "update-interval" = "Silent";
-      };
     };
   };
 
