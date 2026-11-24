@@ -31,4 +31,7 @@ else
     switch --flake "$DIR#$HOST"
 fi
 
+"$NIX" "${NIX_FLAGS[@]}" run "$DIR#home-manager" -- \
+  switch --flake "$DIR#$HOST" -b before-home-manager
+
 echo "Done. Open a new terminal."

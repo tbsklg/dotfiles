@@ -1,4 +1,5 @@
-{ ... }:
+# macOS UI settings, applied manually: sudo darwin-rebuild switch --flake ~/dotfiles#<host>-macos
+{ pkgs, hostConfig, ... }:
 {
   system.defaults = {
     dock = {
@@ -102,12 +103,14 @@
     };
   };
 
-  system.keyboard = {
-    enableKeyMapping = true;
-    userKeyMapping = [
-      { HIDKeyboardModifierMappingSrc = 30064771296; HIDKeyboardModifierMappingDst = 30064771129; }
-      { HIDKeyboardModifierMappingSrc = 30064771129; HIDKeyboardModifierMappingDst = 30064771300; }
-      { HIDKeyboardModifierMappingSrc = 30064771300; HIDKeyboardModifierMappingDst = 30064771129; }
-    ];
-  };
+  system.activationScripts.postActivation.text =
+    let
+      wallpaper = pkgs.runCommand "wallpaper-black.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+        magick -size 64x64 xc:black $out
+      '';
+    in
+    ''
+      launchctl asuser "$(id -u ${hostConfig.username})" \
+        sudo -u ${hostConfig.username} ${pkgs.desktoppr}/bin/desktoppr ${wallpaper} || true
+    '';
 }

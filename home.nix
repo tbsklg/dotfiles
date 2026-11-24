@@ -1,19 +1,5 @@
-{ pkgs, lib, config, hostConfig, firefox-addons, ... }:
-  let
-    dotfiles-update = pkgs.writeShellScriptBin "dotfiles-update" ''
-      DIR="${config.home.homeDirectory}/dotfiles"
-      HOST="${hostConfig.host}"
-      ${builtins.readFile ./scripts/dotfiles-update}
-    '';
-    wallpaper = pkgs.runCommand "wallpaper-black.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
-      magick -size 64x64 xc:black $out
-    '';
-  in
+{ pkgs, config, hostConfig, firefox-addons, ... }:
   {
-    home.activation.wallpaper = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      run ${pkgs.desktoppr}/bin/desktoppr ${wallpaper} || true
-    '';
-
     home.username = hostConfig.username;
     home.homeDirectory = hostConfig.homeDirectory;
     home.stateVersion = "24.05";
@@ -54,7 +40,6 @@
       maven
       exercism
       mob
-      dotfiles-update
       statix
       deadnix
       alejandra
@@ -104,9 +89,7 @@
       };
       shellAliases = {
         v = "nvim";
-        sso-login = "$HOME/.aws/bin/sso-login";
-        rebuild = "sudo darwin-rebuild switch --flake ~/dotfiles#${hostConfig.host}";
-      };
+        sso-login = "$HOME/.aws/bin/sso-login";      };
       profileExtra = ''
         [ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
@@ -253,16 +236,6 @@
           "accessibility.typeaheadfind.flashBar" = 0;
           "browser.bookmarks.showMobileBookmarks" = false;
         };
-      };
-    };
-
-    launchd.agents.dotfiles-update-check = {
-      enable = true;
-      config = {
-        ProgramArguments = [ "${dotfiles-update}/bin/dotfiles-update" "check" ];
-        StartCalendarInterval = [ { Hour = 9; Minute = 0; } ];
-        StandardOutPath = "${config.home.homeDirectory}/Library/Logs/dotfiles-update.log";
-        StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/dotfiles-update.log";
       };
     };
   }

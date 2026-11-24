@@ -18,27 +18,38 @@
     };
   };
 
-  outputs = { nix-darwin, home-manager, nix-homebrew, firefox-addons, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, nix-homebrew, firefox-addons, ... }:
     let
-      mkDarwin = hostConfig: nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      private = import ./hosts/private.nix;
+      work = import ./hosts/work.nix;
+
+      # System (sudo): bootstrap and rare changes
+      mkDarwin = hostConfig: extraModules: nix-darwin.lib.darwinSystem {
         specialArgs = { inherit hostConfig; };
-        modules = [
-          ./darwin.nix
-          nix-homebrew.darwinModules.nix-homebrew
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "before-home-manager";
-              extraSpecialArgs = { inherit hostConfig firefox-addons; };
-              users.${hostConfig.username} = import ./home.nix;
-            };
-          }
-        ];
+        modules = [ ./darwin.nix nix-homebrew.darwinModules.nix-homebrew ] ++ extraModules;
+      };
+
+      # User (no sudo): daily `home-manager switch`
+      mkHome = hostConfig: home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = { inherit hostConfig firefox-addons; };
+        modules = [ ./home.nix ];
       };
     in {
-      darwinConfigurations.private = mkDarwin (import ./hosts/private.nix);
-      darwinConfigurations.work = mkDarwin (import ./hosts/work.nix);
+      darwinConfigurations = {
+        private = mkDarwin private [ ];
+        private-macos = mkDarwin private [ ./macos.nix ];
+        work = mkDarwin work [ ];
+        work-macos = mkDarwin work [ ./macos.nix ];
+      };
+
+      homeConfigurations = {
+        private = mkHome private;
+        work = mkHome work;
+      };
+
+      # pinned home-manager CLI for bootstrap.sh
+      packages.${system}.home-manager = home-manager.packages.${system}.home-manager;
     };
 }
