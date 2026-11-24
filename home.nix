@@ -43,6 +43,7 @@
       statix
       deadnix
       alejandra
+      (callPackage ./tools/dot { inherit (hostConfig) host; })
     ] ++ pkgs.lib.optionals (hostConfig.kopia or false) [
       kopia
     ];

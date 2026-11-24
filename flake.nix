@@ -49,7 +49,19 @@
         work = mkHome work;
       };
 
-      # pinned home-manager CLI for bootstrap.sh
-      packages.${system}.home-manager = home-manager.packages.${system}.home-manager;
+      packages.${system} =
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          mkDot = hostConfig: pkgs.callPackage ./tools/dot { inherit (hostConfig) host; };
+        in
+        {
+          # pinned CLIs, used by bootstrap.sh and dot
+          home-manager = home-manager.packages.${system}.home-manager;
+          darwin-rebuild = nix-darwin.packages.${system}.darwin-rebuild;
+
+          # dot TUI: `nix run ~/dotfiles#<host>`
+          private = mkDot private;
+          work = mkDot work;
+        };
     };
 }

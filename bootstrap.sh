@@ -34,4 +34,4 @@ fi
 "$NIX" "${NIX_FLAGS[@]}" run "$DIR#home-manager" -- \
   switch --flake "$DIR#$HOST" -b before-home-manager
 
-echo "Done. Open a new terminal."
+echo "Done. Open a new terminal and run 'dot' for updates."

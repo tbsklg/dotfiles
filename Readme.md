@@ -48,6 +48,20 @@ sudo darwin-rebuild switch --flake .#work
 `-b before-home-manager` is only needed this once; it renames files the old setup created instead of failing.
 Open a new terminal and check that `which jq` resolves to `~/.nix-profile/bin/jq`.
 
+## `dot` – update TUI
+
+`tools/dot` is a small Zig TUI with all actions below (update inputs, switch home, brew, Neovim,
+show changes, switch system, apply macOS settings). Commands run in the same terminal, so sudo,
+Touch ID and live output work as usual.
+
+```bash
+dot                    # installed by home-manager
+nix run ~/dotfiles#work  # straight from the repo, e.g. before the first home-manager switch
+```
+
+It uses the flake-pinned `home-manager` and `darwin-rebuild`, so it does not depend on either being installed.
+To add an action, edit the `actions` list in `tools/dot/src/main.zig`.
+
 ## Daily updates (no sudo)
 
 ```bash
